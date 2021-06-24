@@ -26,9 +26,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from '@nuxtjs/composition-api';
 
-export default Vue.extend({});
+export default defineComponent({});
 </script>
 
 <style lang="scss">
@@ -43,7 +43,7 @@ export default Vue.extend({});
 
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
