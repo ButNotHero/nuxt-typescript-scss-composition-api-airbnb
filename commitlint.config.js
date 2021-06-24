@@ -1,6 +1,5 @@
 const typeEnum = [
-  'codestyle',
-  'package',
+  'chore',
   'feat',
   'fix',
   'docs',
@@ -8,6 +7,9 @@ const typeEnum = [
   'refactor',
   'test',
   'revert',
+  'codestyle',
+  'package',
+  'build',
 ];
 
 module.exports = {
