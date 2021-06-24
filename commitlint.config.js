@@ -1,5 +1,6 @@
 const typeEnum = [
   'codestyle',
+  'package',
   'feat',
   'fix',
   'docs',
