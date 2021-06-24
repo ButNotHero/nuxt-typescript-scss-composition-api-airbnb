@@ -1,0 +1,15 @@
+#Old style library without packaging
+*.min.css
+
+#Other types of documents
+*.js
+*.jpg
+*.png
+*.eot
+*.ttf
+*.woff
+*.json
+
+#Test and package catalog
+/test/
+/dist/

@@ -26,37 +26,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, useMeta } from '@nuxtjs/composition-api';
 
-export default defineComponent({});
+export default defineComponent({
+  head: {},
+  setup() {
+    useMeta({ title: 'Homepage' });
+  },
+});
 </script>
 
 <style lang="scss">
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
   text-align: center;
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
+  color: #35495e;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 1px;
 }
 
 .subtitle {
+  padding-bottom: 15px;
+  color: #526488;
   font-weight: 300;
   font-size: 42px;
-  color: #526488;
   word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {

@@ -1,3 +1,5 @@
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -42,7 +44,11 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, { isDev, isClient }) {
+      config.plugins.push(new StyleLintPlugin({ syntax: 'scss' }));
+    },
+  },
 
   styleResources: {
     scss: ['./assets/scss/*.scss'],

@@ -1,6 +1,17 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
-  // add your custom config here
-  // https://stylelint.io/user-guide/configuration
-  rules: {},
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-rational-order',
+    'stylelint-prettier/recommended',
+  ],
+  plugins: ['stylelint-order', 'stylelint-scss'],
+  rules: {
+    'at-rule-no-unknown': null,
+    'selector-pseudo-element-no-unknown': [
+      true,
+      {
+        ignorePseudoElements: ['v-deep'],
+      },
+    ],
+  },
 };
