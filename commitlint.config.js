@@ -1,4 +1,13 @@
-const typeEnum = ['codestyle'];
+const typeEnum = [
+  'codestyle',
+  'feat',
+  'fix',
+  'docs',
+  'style',
+  'refactor',
+  'test',
+  'revert',
+];
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
