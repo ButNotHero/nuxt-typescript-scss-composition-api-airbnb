@@ -1,4 +1,5 @@
-# frontend
+[![Build Status](https://travis-ci.com/ButNotHero/nuxt-typescript-scss-composition-api-airbnb.svg?branch=main)](https://travis-ci.com/ButNotHero/nuxt-typescript-scss-composition-api-airbnb)
+# Nuxt true template
 
 ## Build Setup
 
@@ -16,5 +17,6 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+[Nuxt.js docs](https://nuxtjs.org)
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+[Nuxt Composition API](https://composition-api.nuxtjs.org/)
