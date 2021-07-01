@@ -1,23 +1,54 @@
 <template>
   <div>
+    <PageHeader />
     <Nuxt />
+    <PageFooter />
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api';
+import { MetaInfo } from '@/types/metainfo';
+import PageHeader from '@/components/common/PageHeader.vue';
+import PageFooter from '@/components/common/PageFooter.vue';
+
+export default defineComponent({
+  components: {
+    PageHeader,
+    PageFooter,
+  },
+  head(): MetaInfo {
+    const canonical = `https://mysite.com${this.$route.path.toLowerCase().replace(/\/$/, '')}`;
+
+    return {
+      meta: [
+        { charset: 'utf-8' },
+        {
+          name: 'viewport',
+          content:
+            // eslint-disable-next-line vue/max-len
+            'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+        },
+      ],
+      htmlAttrs: {
+        lang: this.$i18n.locale,
+      },
+      script: [
+        // { src: 'https://markknol.github.io/console-log-viewer/console-log-viewer.js' },
+      ],
+      link: [{ rel: 'canonical', href: canonical }],
+    };
+  },
+});
+</script>
 
 <style>
 html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   word-spacing: 1px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
 }
 
 .button--green {

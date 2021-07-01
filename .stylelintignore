@@ -11,5 +11,10 @@
 *.json
 
 #Test and package catalog
+/.nuxt/
 /test/
 /dist/
+/coverage/
+/build/
+/config/
+/node_modules/

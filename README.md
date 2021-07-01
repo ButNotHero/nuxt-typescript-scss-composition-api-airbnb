@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/ButNotHero/nuxt-typescript-scss-composition-api-airbnb.svg?branch=main)](https://travis-ci.com/ButNotHero/nuxt-typescript-scss-composition-api-airbnb)
-# Nuxt true template
+[![Build Status](https://travis-ci.com/ButNotHero/nuxt-movie.svg?token=s2aZnXe23s47sfwJMywJ&branch=main)](https://travis-ci.com/ButNotHero/nuxt-movie)
+# Сайт с информацией о фильмах
 
 ## Build Setup
 
@@ -17,6 +17,7 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-[Nuxt.js docs](https://nuxtjs.org)
+
+[Nuxt.js docs](https://nuxtjs.org).
 
 [Nuxt Composition API](https://composition-api.nuxtjs.org/)

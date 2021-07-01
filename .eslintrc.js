@@ -19,8 +19,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'error' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'error' ? 'warn' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/prefer-default-export': 'off',
     camelcase: 'warn',
     'vue/no-unused-components': 'warn',
@@ -28,6 +28,10 @@ module.exports = {
     'no-undef': 'off',
     'import/no-extraneous-dependencies': 'off',
     'max-len': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'template-curly-spacing': ['error', 'never'],
+    'linebreak-style': ['error', 'unix'],
+    'no-param-reassign': 'off',
     'vue/max-len': [
       'error',
       {

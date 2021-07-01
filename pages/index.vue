@@ -2,7 +2,8 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">frontend</h1>
+      <h1 class="title">{{ $t('hello') }}</h1>
+      <ThemeChoice />
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -10,7 +11,7 @@
           rel="noopener noreferrer"
           class="button--green"
         >
-          Documentation
+          {{ $t('documentation') }}
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
@@ -26,43 +27,32 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useMeta } from '@nuxtjs/composition-api';
+import { defineComponent } from '@nuxtjs/composition-api';
+import { MetaInfo } from '@/types/metainfo';
+import setTitle from '@/utils/settitle';
+import ThemeChoice from '@/components/ThemeChoice.vue';
 
 export default defineComponent({
-  head: {},
-  setup() {
-    useMeta({ title: 'Homepage' });
+  components: {
+    ThemeChoice,
+  },
+  head(): MetaInfo {
+    return {
+      title: setTitle(this.$t('pages.home.title')),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('pages.home.meta.description'),
+        },
+      ],
+    };
   },
 });
 </script>
 
-<style lang="scss">
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.title {
-  display: block;
-  color: #35495e;
-  font-weight: 300;
-  font-size: 100px;
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  padding-bottom: 15px;
-  color: #526488;
-  font-weight: 300;
-  font-size: 42px;
-  word-spacing: 5px;
-}
+<style scoped lang="scss">
+@include h1('.title');
 
 .links {
   padding-top: 15px;
