@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>{{ $t('pages.about.title') }}</h1>
+    <h1 class="h1">{{ $t('pages.about.title') }}</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -12,22 +12,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import { MetaInfo } from '@/types/metainfo';
-import setTitle from '@/utils/settitle';
+import useMetaInfo from '@/utils/useMetaInfo';
 
-export default defineComponent({
+export default Vue.extend({
   name: 'about',
   head(): MetaInfo {
     return {
-      title: setTitle(this.$t('pages.about.title')),
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.$t('pages.about.meta.description'),
-        },
-      ],
+      ...useMetaInfo({
+        title: this.$t('pages.about.title'),
+        desc: this.$t('pages.about.meta.description'),
+      }),
     };
   },
 });
@@ -35,13 +31,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .about {
-  color: #3b8070;
-
-  & h1 {
-    font-size: 30px;
-  }
-
   & p {
+    color: $color-text-secondary;
     font-size: 16px;
   }
 }

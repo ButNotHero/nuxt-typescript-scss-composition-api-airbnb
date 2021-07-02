@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/ButNotHero/nuxt-movie.svg?token=s2aZnXe23s47sfwJMywJ&branch=main)](https://travis-ci.com/ButNotHero/nuxt-movie)
-# Сайт с информацией о фильмах
+# Nuxt Template
 
 ## Build Setup
 
@@ -19,5 +18,3 @@ $ yarn generate
 ```
 
 [Nuxt.js docs](https://nuxtjs.org).
-
-[Nuxt Composition API](https://composition-api.nuxtjs.org/)

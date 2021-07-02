@@ -41,7 +41,6 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/composition-api/module',
     '@nuxtjs/color-mode',
   ],
 

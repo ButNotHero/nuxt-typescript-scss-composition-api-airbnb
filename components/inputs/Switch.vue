@@ -8,10 +8,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import Random from '@/utils/random';
 
-export default defineComponent({
+export default Vue.extend({
   name: 'Switch',
   data() {
     return {

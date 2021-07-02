@@ -8,7 +8,7 @@ export const I18N = {
   detectBrowserLanguage: {
     useCookie: true,
     cookieKey: 'i18n_redirected',
-    alwaysRedirect: false,
+    alwaysRedirect: true,
     fallbackLocale: 'en',
     onlyOnRoot: true,
   },

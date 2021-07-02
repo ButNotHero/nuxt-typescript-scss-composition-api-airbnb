@@ -4,7 +4,7 @@
       v-for="theme of themes"
       :key="theme.tag"
       :class="`theme-switch__btn theme-switch__btn--${theme.tag}`"
-      @click="$colorMode.preference = theme.tag"
+      @click="changeColorMode(theme.tag)"
     >
       {{ theme.text }}
     </button>
@@ -12,25 +12,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 
-export default defineComponent({
+export default Vue.extend({
   name: 'ThemeChoice',
-  setup() {
-    const themes = {
-      light: {
-        text: 'Light',
-        tag: 'light',
-      },
-      dark: {
-        text: 'Dark',
-        tag: 'dark',
-      },
-    };
-
+  data() {
     return {
-      themes,
+      themes: {
+        light: {
+          text: 'Light',
+          tag: 'light',
+        },
+        dark: {
+          text: 'Dark',
+          tag: 'dark',
+        },
+      },
     };
+  },
+  methods: {
+    changeColorMode(tag: string) {
+      this.$colorMode.preference = tag;
+    },
   },
 });
 </script>
@@ -44,18 +47,15 @@ export default defineComponent({
 
   &__btn {
     margin: 0 12px;
-    padding: 10px 40px;
-    //color: #3b8070;
-    @include h1(&);
-    //font-weight: 300;
-    //font-size: 25px;
-    //font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    //'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    //letter-spacing: .2px;
+    padding: 10px 30px;
+    color: $color-text-secondary;
+    font-weight: 500;
+    font-size: 16px;
     background: none;
     border: 1px solid #3b8070;
     border-radius: 4px;
     cursor: pointer;
+    transition: $transition-default;
 
     &:hover {
       color: $color-white;

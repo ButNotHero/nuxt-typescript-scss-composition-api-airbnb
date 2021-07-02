@@ -1,0 +1,10 @@
+@import '../_vars';
+
+.h1 {
+  color: $color-text-primary;
+  font-weight: 300;
+  font-size: 80px;
+  font-family: 'Quicksand', 'Source Sans Pro', Arial, sans-serif;
+  letter-spacing: 1px;
+  transition: $transition-default;
+}

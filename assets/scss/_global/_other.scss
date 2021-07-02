@@ -1,0 +1,34 @@
+@import '../_vars';
+
+html {
+  box-sizing: border-box !important;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: $color-html-background-color;
+  transition: $transition-default;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit !important;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: $transition-default;
+}
+
+.page-enter,
+.page-leave-to {
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}

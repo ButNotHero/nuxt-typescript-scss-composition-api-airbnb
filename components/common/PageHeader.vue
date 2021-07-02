@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import LangSwitcher from '@/components/LangSwitcher.vue';
 
-export default defineComponent({
+export default Vue.extend({
   name: 'Header',
   components: {
     LangSwitcher,
